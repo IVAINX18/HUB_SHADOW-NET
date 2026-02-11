@@ -1,0 +1,269 @@
+:root {
+  --bg-main: #070b14;
+  --bg-panel: #0f1728;
+  --text-main: #eef2ff;
+  --text-muted: #9caac6;
+  --accent: #4ac5ff;
+  --accent-soft: rgba(74, 197, 255, 0.15);
+  --border: rgba(127, 156, 214, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top, #111b35 0%, var(--bg-main) 50%);
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6vw;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 11, 20, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.topbar__brand img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 1.2rem;
+  color: var(--text-muted);
+}
+
+.topbar nav a {
+  transition: color 0.3s ease;
+}
+
+.topbar nav a:hover {
+  color: var(--text-main);
+}
+
+.section {
+  width: min(1100px, 88vw);
+  margin: 0 auto;
+  padding: 5.5rem 0;
+  animation: fade-up 0.8s ease both;
+}
+
+.hero {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 700px;
+}
+
+.hero__logo {
+  width: 92px;
+  margin-bottom: 1.25rem;
+}
+
+.hero__tag {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-size: 0.78rem;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 0.6rem 0;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin: 0.5rem 0;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+.button {
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: var(--accent);
+  color: #06121f;
+}
+
+.button--ghost {
+  border-color: var(--border);
+  color: var(--text-main);
+}
+
+.section-title {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.section-title__eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.section-title__description {
+  margin-top: 0.6rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.info-card,
+.team-card {
+  background: linear-gradient(150deg, rgba(23, 36, 64, 0.7), rgba(15, 23, 40, 0.9));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem;
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.info-card:hover,
+.team-card:hover {
+  border-color: rgba(74, 197, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+.info-card__badge {
+  display: inline-flex;
+  font-size: 0.73rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  margin-bottom: 0.7rem;
+}
+
+.info-card__footer {
+  margin-top: 1rem;
+}
+
+.text-link {
+  color: var(--accent);
+}
+
+.team-card__role {
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.team-card__links {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.team-card__links a {
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border);
+}
+
+.section--contact {
+  text-align: center;
+  padding-bottom: 6.5rem;
+}
+
+.section--contact .section-title {
+  margin-inline: auto;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 780px) {
+  .topbar {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+
+  .topbar nav {
+    flex-wrap: wrap;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+}
