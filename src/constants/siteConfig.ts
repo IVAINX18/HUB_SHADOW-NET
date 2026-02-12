@@ -14,7 +14,7 @@ export const siteConfig = {
     {
       name: 'ShadowNet: Defender',
       description:
-        'Plataforma principal enfocada en protección inteligente y automatización de procesos críticos.',
+        'Plataforma principal enfocada en protección inteligente de Malware y automatización de procesos de ciberseguridad.',
       status: 'Producto principal',
       link: '#contacto'
     }
